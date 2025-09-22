@@ -12,21 +12,27 @@ import {
   NavbarMenuItem,
 } from "@heroui/navbar";
 import { Button } from "@heroui/button";
-import { Kbd } from "@heroui/kbd";
 import { Link } from "@heroui/link";
-import { Input } from "@heroui/input";
 import { link as linkStyles } from "@heroui/theme";
 import NextLink from "next/link";
 import clsx from "clsx";
 
-import { useState } from "react";
-import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/layout/theme-switch";
 import { EspIcon, EngIcon } from "@/components/ui/icons";
 
 export const Navbar = () => {
-  const pathname = usePathname();
+  const [activeHash, setActiveHash] = useState("");
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      setActiveHash(window.location.hash);
+    };
+    window.addEventListener("hashchange", handleHashChange);
+    handleHashChange();
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
 
   const [isEng, setIsEng] = useState(true);
 
@@ -45,36 +51,34 @@ export const Navbar = () => {
         className="justify-center flex-1 hidden xl:flex"
         justify="center"
       >
-        <ul className="justify-center hidden gap-8 ml-2 lg:flex">
+        <ul className="justify-center hidden gap-2 lg:flex">
           {siteConfig.navItems.map((item) => (
             <NavbarItem key={item.href}>
-            <NextLink
-              className={clsx(
-                linkStyles({ color: "foreground" }),
-                "px-3 py-1 rounded-lg flex flex-col items-center",
-                pathname === item.href
-                  ? "text-foreground font-medium"
-                  : "",
-              )}
-              color="foreground"
-              href={item.href}
-              data-active={pathname === item.href ? "true" : undefined}
-            >
-            <span className="relative flex items-center gap-1 px-2">
-              <Icon icon={item.icon} />
-              {item.label}
-              {pathname === item.href && (
-                <span className="absolute left-0 right-0 -bottom-1 h-[4px] rounded bg-primary" />
-              )}
-            </span>
-            </NextLink>
+              <NextLink
+                className={clsx(
+                  linkStyles({ color: "foreground" }),
+                  "px-3 py-1 rounded-lg flex flex-col items-center",
+                  activeHash === item.href ? "text-foreground font-medium" : ""
+                )}
+                color="foreground"
+                href={item.href}
+                data-active={activeHash === item.href ? "true" : undefined}
+              >
+                <span className="relative flex items-center gap-1 px-2">
+                  <Icon icon={item.icon} />
+                  {item.label}
+                  {activeHash === item.href && (
+                    <span className="absolute left-0 right-0 -bottom-1 h-[4px] rounded bg-primary" />
+                  )}
+                </span>
+              </NextLink>
             </NavbarItem>
           ))}
         </ul>
       </NavbarContent>
 
       <NavbarContent
-        className="hidden sm:flex basis-1/5 sm:basis-full" 
+        className="hidden sm:flex basis-1/5 sm:basis-full"
         justify="end"
       >
         <NavbarItem className="hidden gap-2 xl:flex">
@@ -152,7 +156,7 @@ export const Navbar = () => {
                 color={"foreground"}
                 href={item.href}
                 size="lg"
-                data-active={pathname === item.href ? "true" : undefined}
+                data-active={activeHash === item.href ? "true" : undefined}
               >
                 {/* Icono a la izquierda */}
                 {item.icon && (

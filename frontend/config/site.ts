@@ -3,43 +3,65 @@ export type SiteConfig = typeof siteConfig;
 import { Icon } from "@iconify/react";
 
 export const siteConfig = {
-  name: "Jesus Guzman | Freelance Developer",
+  name: "Jesus Guzman | Fullstack Developer",
   description: "Personal portfolio built with Next.js (App Router), TailwindCSS and HeroUI.",
   navItems: [
     {
       label: "Inicio",
-      href: "/",
+      href: "#hero",
       icon: "mdi:home",
     },
     {
       label: "Sobre Mi",
-      href: "/about",
+      href: "#about",
       icon: "mdi:account-box",
     },
     {
+      label: "Experiencia",
+      href: "#experience",
+      icon: "mdi:database-clock",
+    },
+    {
       label: "Proyectos",
-      href: "/projects",
+      href: "#projects",
       icon: "mdi:laptop-chromebook",
+    },
+    {
+      label: "Contacto",
+      href: "#contact",
+      icon: "mdi:email",
     },
   ],
   navMenuItems: [
     {
       label: "Inicio",
-      href: "/",
+      href: "#hero",
       icon: "mdi:home",
-      description: "Regresa a la pagina principal",
+      description: "Volver al inicio",
     },
-        {
+    {
       label: "Sobre Mi",
-      href: "/about",
+      href: "#about",
       icon: "mdi:account-box",
-      description: "Conoce mas sobre mi experiencia y habilidades",
+      description: "Datos personales y habilidades",
+    },
+    {
+      label: "Experiencia",
+      href: "#experience",
+      icon: "mdi:database-clock",
+      description: "Información laboral",
     },
     {
       label: "Proyectos",
-      href: "/projects",
+      href: "#projects",
       icon: "mdi:laptop-chromebook",
-      description: "Trabajos y proyectos realizados",
+      description: "Lista de proyectos realizados",
+    },
+    {
+      label: "Contacto",
+      href: "#contact",
+      icon: "mdi:email",
+      description: "Formulario e información de contacto",
     },
   ],
   links: {
