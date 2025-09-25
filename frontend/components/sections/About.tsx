@@ -26,7 +26,7 @@ const About = () => {
     { name: "React", icon: "mdi:react" },
     { name: "Next.js", icon: "mdi:alpha-n-box" },
     { name: "Node.js", icon: "mdi:nodejs" },
-    { name: "Tailwind CSS", icon: "mdi:tailwind" },
+    { name: "TailwindCSS", icon: "mdi:tailwind" },
     { name: "Git", icon: "mdi:git" },
     { name: "MySQL", icon: "mdi:database" },
     { name: "PostgreSQL", icon: "mdi:database" },
@@ -41,10 +41,10 @@ const About = () => {
       <div className="container max-w-4xl mx-auto">
         <FadeIn>
           <div className="mb-12 text-center">
-            <h2 className="mb-4 text-4xl font-bold text-transparent bg-gradient-to-b from-[#1984ff] to-[#024591] bg-clip-text">
+            <h2 className="mb-4 text-3xl sm:text-4xl font-bold text-transparent bg-gradient-to-b from-[#1984ff] to-[#024591] bg-clip-text">
               Educación
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-md text-muted-foreground">
               Formación académica orientada a la innovación y creación de
               soluciones digitales.
             </p>
@@ -104,10 +104,10 @@ const About = () => {
       <div className="container max-w-4xl mx-auto">
         <FadeIn>
           <div className="my-12 text-center">
-            <h2 className="mb-4 text-4xl font-bold text-transparent bg-gradient-to-b from-[#1984ff] to-[#024591] bg-clip-text">
+            <h2 className="mb-4 text-3xl sm:text-4xl font-bold text-transparent bg-gradient-to-b from-[#1984ff] to-[#024591] bg-clip-text">
               Habilidades
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-md text-muted-foreground">
               Conjunto de lenguajes, frameworks y herramientas que utilizo para desarrollar proyectos.
             </p>
           </div>

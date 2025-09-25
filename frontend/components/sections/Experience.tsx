@@ -87,10 +87,10 @@ const Experience = () => {
       <div className="container max-w-4xl mx-auto">
         <FadeIn>
           <div className="mb-8 text-center slide-up">
-            <h2 className="mb-4 text-4xl font-bold text-transparent bg-gradient-to-b from-[#1984ff] to-[#024591] bg-clip-text">
+            <h2 className="mb-4 text-3xl sm:text-4xl font-bold text-transparent bg-gradient-to-b from-[#1984ff] to-[#024591] bg-clip-text">
               Experiencia Profesional
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-md text-muted-foreground">
               Soy un desarrollador de software con experiencia en el diseño de
               aplicaciones web dinámicas y accesibles, enfocado en transformar
               ideas en soluciones digitales eficientes.
