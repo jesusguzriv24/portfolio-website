@@ -17,6 +17,7 @@ import { link as linkStyles } from "@heroui/theme";
 import NextLink from "next/link";
 import clsx from "clsx";
 
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/layout/theme-switch";
@@ -24,15 +25,54 @@ import { EspIcon, EngIcon } from "@/components/ui/icons";
 
 export const Navbar = () => {
   const [activeHash, setActiveHash] = useState("");
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleHashChange = () => {
-      setActiveHash(window.location.hash);
+      const currentHash = window.location.hash;
+      if (pathname === "/" && !currentHash) {
+        setActiveHash("#hero");
+      } else {
+        setActiveHash(currentHash);
+      }
     };
-    window.addEventListener("hashchange", handleHashChange);
+
+    // Create intersection observer
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveHash(`#${entry.target.id}`);
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: "-50% 0px",
+        threshold: 0,
+      }
+    );
+
+    // Observe all sections
+    document.querySelectorAll("section[id]").forEach((section) => {
+      observer.observe(section);
+    });
+
+    // Initial check
     handleHashChange();
-    return () => window.removeEventListener("hashchange", handleHashChange);
-  }, []);
+
+    // Listen for hash changes
+    window.addEventListener("hashchange", handleHashChange);
+
+    return () => {
+      window.removeEventListener("hashchange", handleHashChange);
+      observer.disconnect();
+    };
+  }, [pathname]);
+
+  const handleNavClick = (href: string) => {
+    setActiveHash(href);
+  };
 
   const [isEng, setIsEng] = useState(true);
 
@@ -57,19 +97,24 @@ export const Navbar = () => {
               <NextLink
                 className={clsx(
                   linkStyles({ color: "foreground" }),
-                  "px-3 py-1 rounded-lg flex flex-col items-center",
+                  "px-3 py-1 rounded-lg flex flex-col items-center relative",
                   activeHash === item.href ? "text-foreground font-medium" : ""
                 )}
                 color="foreground"
                 href={item.href}
+                onClick={() => handleNavClick(item.href)}
                 data-active={activeHash === item.href ? "true" : undefined}
               >
                 <span className="relative flex items-center gap-1 px-2">
                   <Icon icon={item.icon} />
                   {item.label}
-                  {activeHash === item.href && (
-                    <span className="absolute left-0 right-0 -bottom-1 h-[4px] rounded bg-primary" />
-                  )}
+                  {/* Barra animada */}
+                  <span
+                    className={clsx(
+                      "absolute left-0 -bottom-1 h-[4px] w-0 bg-primary rounded-full transition-all duration-500",
+                      activeHash === item.href && "w-full left-0"
+                    )}
+                  />
                 </span>
               </NextLink>
             </NavbarItem>
@@ -156,6 +201,7 @@ export const Navbar = () => {
                 color={"foreground"}
                 href={item.href}
                 size="lg"
+                onClick={() => handleNavClick(item.href)}
                 data-active={activeHash === item.href ? "true" : undefined}
               >
                 {/* Icono a la izquierda */}
