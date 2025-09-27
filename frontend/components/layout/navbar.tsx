@@ -37,7 +37,7 @@ export const Navbar = () => {
       }
     };
 
-    // Create intersection observer
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -53,15 +53,15 @@ export const Navbar = () => {
       }
     );
 
-    // Observe all sections
+
     document.querySelectorAll("section[id]").forEach((section) => {
       observer.observe(section);
     });
 
-    // Initial check
+
     handleHashChange();
 
-    // Listen for hash changes
+
     window.addEventListener("hashchange", handleHashChange);
 
     return () => {
@@ -83,7 +83,9 @@ export const Navbar = () => {
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex items-center justify-start gap-1" href="/">
-            <p className="font-bold text-inherit">{"<JG/>"}</p>
+            <p className="text-2xl font-bold text-transparent bg-gradient-to-b from-[#1984ff] to-[#024591] bg-clip-text">
+              {"<JGR/>"}
+            </p>
           </NextLink>
         </NavbarBrand>
       </NavbarContent>
@@ -108,7 +110,7 @@ export const Navbar = () => {
                 <span className="relative flex items-center gap-1 px-2">
                   <Icon icon={item.icon} />
                   {item.label}
-                  {/* Barra animada */}
+
                   <span
                     className={clsx(
                       "absolute left-0 -bottom-1 h-[4px] w-0 bg-primary rounded-full transition-all duration-500",
@@ -147,7 +149,7 @@ export const Navbar = () => {
               className="text-foreground/60"
             />
           </Link>
-          <span
+          {/* <span
             role="button"
             tabIndex={0}
             onClick={toggleLangIcon}
@@ -155,7 +157,7 @@ export const Navbar = () => {
             className="flex items-center justify-center p-0 m-0 bg-transparent border-none rounded outline-none cursor-pointer select-none"
           >
             {isEng ? <EspIcon size={20} /> : <EngIcon size={20} />}
-          </span>
+          </span> */}
           <ThemeSwitch />
         </NavbarItem>
       </NavbarContent>
@@ -177,14 +179,15 @@ export const Navbar = () => {
             className="text-foreground/60"
           />
         </Link>
-        <span
-          role="button"
-          tabIndex={0}
-          onClick={toggleLangIcon}
-          aria-label="Cambiar idioma"
-        >
-          {isEng ? <EspIcon size={20} /> : <EngIcon size={20} />}
-        </span>
+          {/* <span
+            role="button"
+            tabIndex={0}
+            onClick={toggleLangIcon}
+            aria-label="Cambiar idioma"
+            className="flex items-center justify-center p-0 m-0 bg-transparent border-none rounded outline-none cursor-pointer select-none"
+          >
+            {isEng ? <EspIcon size={20} /> : <EngIcon size={20} />}
+          </span> */}
         <ThemeSwitch />
         <NavbarMenuToggle />
       </NavbarContent>
@@ -204,13 +207,13 @@ export const Navbar = () => {
                 onClick={() => handleNavClick(item.href)}
                 data-active={activeHash === item.href ? "true" : undefined}
               >
-                {/* Icono a la izquierda */}
+
                 {item.icon && (
                   <span className="flex-shrink-0 text-xl">
                     <Icon icon={item.icon} />
                   </span>
                 )}
-                {/* Textos a la derecha */}
+
                 <span className="flex flex-col items-start">
                   <span className="font-semibold">{item.label}</span>
                   <span className="text-xs text-default-500">

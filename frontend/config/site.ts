@@ -3,7 +3,7 @@ export type SiteConfig = typeof siteConfig;
 import { Icon } from "@iconify/react";
 
 export const siteConfig = {
-  name: "Jesus Guzman | Fullstack Developer",
+  name: "Jesus Guzman | Programador Jr",
   description: "Personal portfolio built with Next.js (App Router), TailwindCSS and HeroUI.",
   navItems: [
     {

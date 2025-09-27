@@ -24,7 +24,7 @@ const Hero = () => {
         transition={{ duration: 1.3, ease: "easeIn" }}
       >
         <span className="inline sm:text-6xl text-4xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-[#1984ff] to-[#024591]">
-          Fullstack Developer
+          Programador Jr
         </span>
       </motion.div>
       <motion.div
@@ -93,11 +93,11 @@ const Hero = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.3, ease: "easeIn" }}
         >
-          {/* Card 1 */}
+
           <div className="flex items-center justify-center p-4 rounded-xl">
-            {/* Texto grande a la izquierda */}
-            <span className="text-6xl font-extrabold text-primary">+3</span>
-            {/* Enunciados a la derecha */}
+
+            <span className="text-6xl font-extrabold text-primary">+2</span>
+
             <div className="flex flex-col items-start ml-4">
               <span className="text-base font-semibold text-foreground">
                 Años de experiencia
@@ -107,11 +107,11 @@ const Hero = () => {
               </span>
             </div>
           </div>
-          {/* Card 2 */}
+
           <div className="flex items-center justify-center p-4 rounded-xl">
-            {/* Texto grande a la izquierda */}
+
             <span className="text-6xl font-extrabold text-primary">+3</span>
-            {/* Enunciados a la derecha */}
+
             <div className="flex flex-col items-start ml-4">
               <span className="text-base font-semibold text-foreground">
                 Proyectos realizados
@@ -128,9 +128,9 @@ const Hero = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.3, ease: "easeIn" }}
       >
-        {/* Botón para descargar CV */}
+
         <a
-          href="/CV.pdf"
+          href="/CV_Jesus-Alberto-Guzman-Rivera.pdf"
           download
           className={buttonStyles({
             color: "primary",
@@ -141,7 +141,7 @@ const Hero = () => {
           <Icon icon="mdi:download" className="text-xl" />
           Descargar CV
         </a>
-        {/* Botón solo icono Github */}
+
         <Link
           isExternal
           href={siteConfig.links.github}
@@ -149,7 +149,7 @@ const Hero = () => {
         >
           <Icon icon="mdi:github" className="text-3xl text-foreground/80" />
         </Link>
-        {/* Botón solo icono Linkedin */}
+
         <Link
           isExternal
           href={siteConfig.links.linkedin}

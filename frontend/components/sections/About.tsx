@@ -30,7 +30,8 @@ const About = () => {
     { name: "Git", icon: "mdi:git" },
     { name: "MySQL", icon: "mdi:database" },
     { name: "PostgreSQL", icon: "mdi:database" },
-    { name: "VS Code", icon: "mdi:microsoft-visual-studio" },
+    { name: "VS Code", icon: "mdi:microsoft-visual-studio-code" },
+    { name: "Excel", icon: "mdi:microsoft-excel" },
   ];
 
   return (
@@ -44,7 +45,7 @@ const About = () => {
             <h2 className="mb-4 text-3xl sm:text-4xl font-bold text-transparent bg-gradient-to-b from-[#1984ff] to-[#024591] bg-clip-text">
               Educación
             </h2>
-            <p className="text-md text-muted-foreground">
+            <p className="px-8 text-md text-muted-foreground">
               Formación académica orientada a la innovación y creación de
               soluciones digitales.
             </p>
@@ -58,30 +59,24 @@ const About = () => {
                 key={index}
                 className="relative overflow-hidden transition-all duration-500 transform border shadow-lg border-primary/50 group bg-foreground/10 rounded-2xl hover:shadow-2xl hover:-translate-y-2"
               >
-                {/* Efecto de brillo en hover */}
                 <div className="absolute inset-0 transition-opacity duration-500 opacity-0 bg-gradient-to-r from-blue-400/10 to-blue-200/10 group-hover:opacity-100" />
 
-                {/* Decoración geométrica */}
                 <div className="absolute top-0 right-0 w-20 h-20 rounded-bl-full opacity-100 bg-gradient-to-br from-blue-700 to-blue-500" />
                 <div className="absolute bottom-0 left-0 w-16 h-16 rounded-tr-full opacity-100 bg-gradient-to-tr from-blue-700 to-blue-500" />
 
                 <div className="relative p-8">
-                  {/* Icono de graduación */}
                   <div className="flex items-center justify-center w-16 h-16 mx-auto mb-6 rounded-full shadow-lg bg-gradient-to-r from-blue-700 to-blue-400">
                     <Icon icon="mdi:school" className="w-8 h-8 text-white" />
                   </div>
 
-                  {/* Título del grado */}
                   <h3 className="mb-3 text-xl font-bold text-center transition-colors duration-300 text-foreground group-hover:text-blue-600">
                     {edu.degree}
                   </h3>
 
-                  {/* Institución */}
                   <p className="mb-4 text-lg font-medium text-center text-foreground/70">
                     {edu.institution}
                   </p>
 
-                  {/* Periodo con icono */}
                   <div className="flex items-center justify-center gap-2 text-sm text-gray-500">
                     <div className="flex items-center gap-2 px-4 py-2 border border-blue-100 rounded-full bg-gradient-to-r from-blue-50 to-purple-50">
                       <Icon
@@ -92,7 +87,6 @@ const About = () => {
                     </div>
                   </div>
 
-                  {/* Línea decorativa */}
                   <div className="w-16 h-1 mx-auto mt-6 transition-opacity duration-500 rounded-full opacity-0 bg-gradient-to-r from-blue-700 to-blue-400 group-hover:opacity-100" />
                 </div>
               </div>
@@ -107,13 +101,12 @@ const About = () => {
             <h2 className="mb-4 text-3xl sm:text-4xl font-bold text-transparent bg-gradient-to-b from-[#1984ff] to-[#024591] bg-clip-text">
               Habilidades
             </h2>
-            <p className="text-md text-muted-foreground">
+            <p className="px-8 text-md text-muted-foreground">
               Conjunto de lenguajes, frameworks y herramientas que utilizo para desarrollar proyectos.
             </p>
           </div>
         </FadeIn>
 
-        {/* Grid de skills */}
         <div className="grid grid-cols-3 gap-6 sm:grid-cols-4 md:grid-cols-6">
           {skills.map((skill, index) => (
             <FadeIn key={index}>

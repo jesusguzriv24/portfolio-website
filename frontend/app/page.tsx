@@ -21,6 +21,8 @@ export default function Home() {
       <Hero />
       <About />
       <Experience />
+      <Projects />
+      <Contact />
     </>
   );
 }

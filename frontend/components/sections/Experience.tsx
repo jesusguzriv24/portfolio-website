@@ -66,7 +66,7 @@ const experiences = [
     title: "Programador Jr",
     company: "Lumasoft",
     location: "Celaya, Guanajuato",
-    period: "Junio 2022 - Noviembre 2022",
+    period: "Agosto 2022 - Marzo 2023",
     description:
       "Apoyo en el desarrollo y mantenimiento de aplicaciones web, colaborando en la implementación de interfaces y funcionalidades básicas.",
     achievements: [
@@ -82,7 +82,7 @@ const Experience = () => {
   return (
     <section
       id="experience"
-      className="flex flex-col items-center justify-center w-full min-h-[calc(100vh-125px)] scroll-mt-20 mt-28"
+      className="flex flex-col items-center justify-center w-full min-h-[calc(100vh-125px)] scroll-mt-20 mt-28 mb-16"
     >
       <div className="container max-w-4xl mx-auto">
         <FadeIn>
@@ -90,7 +90,7 @@ const Experience = () => {
             <h2 className="mb-4 text-3xl sm:text-4xl font-bold text-transparent bg-gradient-to-b from-[#1984ff] to-[#024591] bg-clip-text">
               Experiencia Profesional
             </h2>
-            <p className="text-md text-muted-foreground">
+            <p className="px-8 text-md text-muted-foreground">
               Soy un desarrollador de software con experiencia en el diseño de
               aplicaciones web dinámicas y accesibles, enfocado en transformar
               ideas en soluciones digitales eficientes.
@@ -118,7 +118,6 @@ const Experience = () => {
                       </p>
                     </div>
 
-                    {/* Periodo y ubicación */}
                     <div className="flex flex-col gap-2 text-sm text-foreground/80 sm:flex-row md:absolute md:top-6 md:right-6 md:gap-4">
                       <div className="flex items-center gap-2">
                         <Icon icon="mdi:calendar" className="w-4 h-4" />
