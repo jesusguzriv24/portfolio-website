@@ -175,7 +175,7 @@ const Projects = () => {
 
                 <div >
                   <h4 className="mb-3 text-sm font-light tracking-wider uppercase text-default-600">
-                    Technologies Used
+                    Tecnologías utilizadas
                   </h4>
                   <div className="flex flex-wrap gap-3">
                     {projects[currentProject].technologies.map(
