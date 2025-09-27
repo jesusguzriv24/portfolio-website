@@ -31,7 +31,7 @@ const About = () => {
     { name: "MySQL", icon: "mdi:database" },
     { name: "PostgreSQL", icon: "mdi:database" },
     { name: "VS Code", icon: "mdi:microsoft-visual-studio-code" },
-    { name: "Visual Basic", icon: "mdi:microsoft-visual-studio" },
+    { name: "VB", icon: "mdi:microsoft-visual-studio" },
     { name: "Excel", icon: "mdi:microsoft-excel" },
   ];
 
