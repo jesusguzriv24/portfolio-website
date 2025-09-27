@@ -51,7 +51,7 @@ const Projects = () => {
       id: 3,
       title: "Control de Bodega Electoral",
       description:
-        "Aplicación de gestión de tareas con funcionalidades colaborativas, notificaciones en tiempo real y análisis de productividad.",
+        "Gestion de inventarios y reportes para una bodega electoral, facilitando el control de materiales y recursos otorgados a los CAEs durante procesos electorales.",
       image: "/BodegaElectoral.jpg",
       technologies: [
         { name: "Excel", icon: "mdi:microsoft-excel" },
