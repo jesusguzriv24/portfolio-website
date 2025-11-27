@@ -96,7 +96,7 @@ const Hero = () => {
 
           <div className="flex items-center justify-center p-4 rounded-xl">
 
-            <span className="text-6xl font-extrabold text-primary">+2</span>
+            <span className="text-6xl font-extrabold text-primary">+3</span>
 
             <div className="flex flex-col items-start ml-4">
               <span className="text-base font-semibold text-foreground">
