@@ -60,6 +60,23 @@ const Projects = () => {
       liveUrl: "",
       githubUrl: "",
     },
+    {
+      id: 4,
+      title: "Prop Picker NBA",
+      description:
+        "App diseñada para ayudar a seleccionar las mejores estadisticas de jugadores de la NBA, utilizando datos estadisticos mediante graficos y tablas interactivas.",
+      image: "/Bestat.jpg",
+      technologies: [
+        { name: "React", icon: "mdi:react" },
+        { name: "Node.js", icon: "mdi:nodejs" },
+        { name: "Next.js", icon: "mdi:alpha-n-box" },
+        { name: "PostgreSQL", icon: "mdi:database" },
+        { name: "TailwindCSS", icon: "mdi:tailwind" },
+        { name: "TypeScript", icon: "mdi:language-typescript" },
+      ],
+      liveUrl: "",
+      githubUrl: "",
+    },
   ];
 
   const nextProject = () => {
@@ -100,18 +117,14 @@ const Projects = () => {
       className="flex flex-col items-center justify-center w-full min-h-[calc(100vh-125px)] scroll-mt-20 mt-28 px-4 md:px-8 lg:px-16"
     >
       <FadeIn>
-
         <div className="mb-8 text-center">
           <h2 className="mb-4 text-3xl sm:text-4xl font-bold text-transparent bg-gradient-to-b from-[#1984ff] to-[#024591] bg-clip-text">
             Proyectos
           </h2>
-
         </div>
 
-
         <div className="w-full max-w-4xl mx-auto">
-          <div className="relative overflow-hidden border shadow-xl rounded-2xl bg-gradient-to-br from-[#024591]/30 to-[#1984ff]/40 backdrop-blur-sm border-default-200">
-
+          <div className="relative overflow-hidden border shadow-xl rounded-2xl border-primary/50 bg-foreground/10">
             <div className="relative w-full h-64 overflow-hidden md:h-80 lg:h-96">
               <div
                 className={`relative w-full h-full transition-transform duration-500 ease-in-out ${
@@ -127,9 +140,7 @@ const Projects = () => {
                 />
               </div>
 
-
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-
 
               <button
                 onClick={prevProject}
@@ -162,18 +173,15 @@ const Projects = () => {
                     : "transform translate-y-0 opacity-100"
                 }`}
               >
-
-                <h3 className="mb-4 text-lg font-bold md:text-3xl lg:text-2xl text-default-900">
+                <h3 className="mb-4 text-lg font-bold md:text-3xl lg:text-2xl text-primary">
                   {projects[currentProject].title}
                 </h3>
-
 
                 <p className="max-w-4xl mb-6 text-sm leading-relaxed md:text-md text-default-700">
                   {projects[currentProject].description}
                 </p>
 
-
-                <div >
+                <div>
                   <h4 className="mb-3 text-sm font-light tracking-wider uppercase text-default-600">
                     Tecnologías utilizadas
                   </h4>
@@ -182,7 +190,7 @@ const Projects = () => {
                       (tech, index) => (
                         <div
                           key={index}
-                          className="flex items-center gap-2 px-3 py-2 transition-colors border rounded-full bg-default-100 hover:bg-default-200 border-default-200"
+                          className="flex items-center gap-2 px-3 py-2 transition-colors border rounded-full bg-default-100 hover:bg-default-200 border-default-200 border-primary/50"
                         >
                           <Icon
                             icon={tech.icon}
@@ -197,21 +205,23 @@ const Projects = () => {
                   </div>
                 </div>
 
+                <div className="flex flex-col justify-center gap-4 mt-6 sm:flex-row">
+                  {projects[currentProject].liveUrl ? (
+                    <Button
+                      as={Link}
+                      href={projects[currentProject].liveUrl}
+                      target="_blank"
+                      size="lg"
+                      className="px-8 py-3 font-semibold text-sm text-white transition-all duration-300 bg-gradient-to-b from-[#1984ff] to-[#024591] rounded-xl hover:shadow-lg hover:scale-105"
+                      startContent={
+                        <Icon icon="mdi:open-in-new" className="w-5 h-5" />
+                      }
+                    >
+                      Ver Proyecto
+                    </Button>
+                  ) : null}
 
-                {/* <div className="flex flex-col gap-4 sm:flex-row">
-                  <Button
-                    as={Link}
-                    href={projects[currentProject].liveUrl}
-                    target="_blank"
-                    size="lg"
-                    className="px-8 py-3 font-semibold text-sm text-white transition-all duration-300 bg-gradient-to-b from-[#1984ff] to-[#024591] rounded-xl hover:shadow-lg hover:scale-105"
-                    startContent={
-                      <Icon icon="mdi:open-in-new" className="w-5 h-5" />
-                    }
-                  >
-                    Ver Proyecto
-                  </Button>
-
+                  {/*
                   <Button
                     as={Link}
                     href={projects[currentProject].githubUrl}
@@ -224,12 +234,11 @@ const Projects = () => {
                     }
                   >
                     Ver Codigo
-                  </Button>
-                </div> */}
+                  </Button>*/}
+                </div>
               </div>
             </div>
           </div>
-
 
           <div className="flex items-center justify-center gap-3 mt-8">
             {projects.map((_, index) => (
