@@ -15,23 +15,54 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Aplicación Web Centro de Servicios CBI",
-      description:
-        "Diseñada para un centro de servicio autorizado Samsung, con el fin de gestionar de manera eficiente órdenes de servicio, inventario, clientes y usuarios.",
+      title: "Servicios CBI (ERP)",
+      description: 
+        "Servicios CBI es una plataforma de gestión empresarial (ERP) diseñada específicamente para un Centro de Servicio Autorizado Samsung. El sistema optimiza el ciclo de vida completo de las órdenes de soporte técnico para equipos de línea blanca, electrónica y aires acondicionados.",
       image: "/ServiciosCBI.jpg",
       technologies: [
         { name: "React", icon: "mdi:react" },
-        { name: "Node.js", icon: "mdi:nodejs" },
         { name: "Next.js", icon: "mdi:alpha-n-box" },
-        { name: "PostgreSQL", icon: "mdi:database" },
-        { name: "TailwindCSS", icon: "mdi:tailwind" },
         { name: "TypeScript", icon: "mdi:language-typescript" },
+        { name: "PostgreSQL", icon: "mdi:database" },
+        { name: "Supabase", icon: "solar:bolt-bold" },
+        { name: "JWT", icon: "mdi:lock" },
+        { name: "ZOD", icon: "mdi:lock" },
+        { name: "TailwindCSS", icon: "mdi:tailwind" },
+        { name: "TanStack", icon: "solar:document-add-bold-duotone" },
+        { name: "Recharts", icon: "solar:chart-2-bold" },
+        { name: "React-PDF", icon: "solar:file-bold" },
+        { name: "Docker", icon: "mdi:docker" },
+        { name: "Git", icon: "mdi:git" },
       ],
       liveUrl: "",
       githubUrl: "",
     },
     {
       id: 2,
+      title: "NBA Stats API",
+      description:
+        "API RESTful de alto rendimiento para estadísticas de la NBA. Automatizada mediante cron jobs para la recolección de datos (Selenium/BS4) y su procesamiento (Pandas), exponiéndolos mediante FastAPI y PostgreSQL. Incluye seguridad avanzada (JWT/API Keys), control de tráfico con Redis y despliegue en Docker.",
+      image: "/NBA-Stats-API.jpg",
+      technologies: [
+        { name: "Python", icon: "mdi:language-python" },
+        { name: "FastAPI", icon: "solar:bolt-bold" },
+        { name: "Swagger UI", icon: "solar:code-circle-linear" },
+        { name: "PostgreSQL", icon: "mdi:database" },
+        { name: "Redis", icon: "mdi:database" },
+        { name: "Selenium", icon: "mdi:robot" },
+        { name: "BeautifulSoup", icon: "mdi:bowl-mix" },
+        { name: "Numpy", icon: "mdi:numeric" },
+        { name: "Pandas", icon: "mdi:panda" },
+        { name: "JWT", icon: "mdi:lock" },
+        { name: "API Keys", icon: "solar:key-bold" },
+        { name: "Docker", icon: "mdi:docker" },
+        { name: "Git", icon: "mdi:git" },
+      ],
+      liveUrl: "https://bestat-nba-api.onrender.com/docs",
+      githubUrl: "https://github.com/jesusguzriv24/nba-stats-api",
+    },
+    {
+      id: 3,
       title: "Modelo de ML para Predicción de Partidos de NBA",
       description:
         "Un modelo de Machine Learning que emplea datos históricos de equipos y jugadores, obtenidos mediante técnicas de scrapping, para predecir los resultados de los partidos de la NBA.",
@@ -39,6 +70,7 @@ const Projects = () => {
       technologies: [
         { name: "Python", icon: "mdi:language-python" },
         { name: "Pandas", icon: "mdi:panda" },
+        { name: "Numpy", icon: "mdi:numeric" },
         { name: "BeautifulSoup", icon: "mdi:bowl-mix" },
         { name: "Scikit-Learn", icon: "mdi:language-python" },
         { name: "XGBoost", icon: "mdi:language-python" },
@@ -48,7 +80,7 @@ const Projects = () => {
       githubUrl: "",
     },
     {
-      id: 3,
+      id: 4,
       title: "Control de Bodega Electoral",
       description:
         "Gestion de inventarios y reportes para una bodega electoral, facilitando el control de materiales y recursos otorgados a los CAEs durante procesos electorales.",
@@ -56,23 +88,6 @@ const Projects = () => {
       technologies: [
         { name: "Excel", icon: "mdi:microsoft-excel" },
         { name: "Visual Basic", icon: "mdi:microsoft-visual-studio" },
-      ],
-      liveUrl: "",
-      githubUrl: "",
-    },
-    {
-      id: 4,
-      title: "Prop Picker NBA",
-      description:
-        "App diseñada para ayudar a seleccionar las mejores estadisticas de jugadores de la NBA, utilizando datos estadisticos mediante graficos y tablas interactivas.",
-      image: "/Bestat.jpg",
-      technologies: [
-        { name: "React", icon: "mdi:react" },
-        { name: "Node.js", icon: "mdi:nodejs" },
-        { name: "Next.js", icon: "mdi:alpha-n-box" },
-        { name: "PostgreSQL", icon: "mdi:database" },
-        { name: "TailwindCSS", icon: "mdi:tailwind" },
-        { name: "TypeScript", icon: "mdi:language-typescript" },
       ],
       liveUrl: "",
       githubUrl: "",
@@ -190,7 +205,7 @@ const Projects = () => {
                       (tech, index) => (
                         <div
                           key={index}
-                          className="flex items-center gap-2 px-3 py-2 transition-colors border rounded-full bg-default-100 hover:bg-default-200 border-default-200 border-primary/50"
+                          className="flex items-center gap-2 px-3 py-2 transition-colors border rounded-full bg-default-100 hover:bg-default-200 border-primary/50"
                         >
                           <Icon
                             icon={tech.icon}
@@ -221,7 +236,7 @@ const Projects = () => {
                     </Button>
                   ) : null}
 
-                  {/*
+                  {projects[currentProject].githubUrl ? (
                   <Button
                     as={Link}
                     href={projects[currentProject].githubUrl}
@@ -234,7 +249,8 @@ const Projects = () => {
                     }
                   >
                     Ver Codigo
-                  </Button>*/}
+                  </Button>
+                  ) : null}
                 </div>
               </div>
             </div>

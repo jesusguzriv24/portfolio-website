@@ -40,14 +40,6 @@ export const Footer = () => {
               >
                 <Icon icon="mdi:linkedin" className="w-5 h-5 text-foreground/70 hover:text-primary" />
               </Link>
-              <Link
-                isExternal
-                href="mailto:jesusguzriv24@gmail.com"
-                className="p-2 transition-colors rounded-lg hover:bg-primary/10"
-                aria-label="Email"
-              >
-                <Icon icon="mdi:email" className="w-5 h-5 text-foreground/70 hover:text-primary" />
-              </Link>
             </div>
           </div>
 
